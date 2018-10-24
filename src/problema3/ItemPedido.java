@@ -4,6 +4,8 @@ class ItemPedido {
 
     private Produto produto;
     private int quantidade;
+    private double pesoTotalItem;
+    
 
     /**
      * @param produto
@@ -41,4 +43,12 @@ class ItemPedido {
     protected double getValorItem() {
         return this.quantidade * this.produto.getValor();
     }
-}
+    
+    protected double getPesoTotalItem(){
+        return (this.quantidade * produto.getPeso()) / 1000;
+    }
+   
+        
+        
+    }
+

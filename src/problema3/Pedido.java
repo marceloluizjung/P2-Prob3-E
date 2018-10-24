@@ -10,8 +10,12 @@ public class Pedido {
     private Date data;
     private String endereco;
     private ArrayList<ItemPedido> itens;
+    private Entrega entrega;
+    private double pesoTotal;
+    FactoryTipoEntrega fac;
 
     public Pedido() {
+        fac = new FactoryTipoEntrega();
     }
 
     public int getNumero() {
@@ -58,4 +62,23 @@ public class Pedido {
         return valorTotal;
     }
 
+    public double getPesoTotalPedido() {
+        double valorPeso = 0;
+        for (ItemPedido ip : this.itens) {
+            valorPeso += (ip.getPesoTotalItem());
+        }
+        return valorPeso;
+    }
+
+    protected Entrega escolhaTipoEntrega(int tipo) {
+
+        System.out.println("Escolha o tipo de entrega 1, 2, 3");
+
+        entrega = fac.FactoryTipoEntrega(tipo, this.pesoTotal);
+
+        return entrega;
+
+    }
+    
+    
 }

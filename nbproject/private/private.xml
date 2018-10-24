@@ -2,6 +2,15 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/Marcelo/Documents/NetBeansProjects/P2-Prob3-E/src/problema3/RetiraLocal.java</file>
+            <file>file:/C:/Users/Marcelo/Documents/NetBeansProjects/P2-Prob3-E/src/problema3/Produto.java</file>
+            <file>file:/C:/Users/Marcelo/Documents/NetBeansProjects/P2-Prob3-E/src/problema3/Entrega.java</file>
+            <file>file:/C:/Users/Marcelo/Documents/NetBeansProjects/P2-Prob3-E/src/problema3/Pac.java</file>
+            <file>file:/C:/Users/Marcelo/Documents/NetBeansProjects/P2-Prob3-E/src/problema3/Pedido.java</file>
+            <file>file:/C:/Users/Marcelo/Documents/NetBeansProjects/P2-Prob3-E/src/problema3/Sedex.java</file>
+            <file>file:/C:/Users/Marcelo/Documents/NetBeansProjects/P2-Prob3-E/src/problema3/ItemPedido.java</file>
+            <file>file:/C:/Users/Marcelo/Documents/NetBeansProjects/P2-Prob3-E/src/problema3/FactoryTipoEntrega.java</file>
+        </group>
     </open-files>
 </project-private>
