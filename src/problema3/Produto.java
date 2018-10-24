@@ -34,7 +34,7 @@ public class Produto {
     }
 
     public int getPeso() {
-        return peso;
+        return (peso/1000);
     }
 
     public void setPeso(int peso) {

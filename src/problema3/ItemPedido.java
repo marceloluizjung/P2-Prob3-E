@@ -45,7 +45,7 @@ class ItemPedido {
     }
     
     protected double getPesoTotalItem(){
-        return (this.quantidade * produto.getPeso()) / 1000;
+        return (this.quantidade * produto.getPeso());
     }
    
         

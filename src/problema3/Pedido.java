@@ -71,14 +71,19 @@ public class Pedido {
     }
 
     protected Entrega escolhaTipoEntrega(int tipo) {
-
         System.out.println("Escolha o tipo de entrega 1, 2, 3");
-
         entrega = fac.FactoryTipoEntrega(tipo, this.pesoTotal);
-
         return entrega;
-
     }
     
-    
+    protected double getValorEntrega(){
+        return entrega.retornarValorEntrega();
+    }
+
+    protected double getValorTotal() {
+        double aux = this.getValorPedido() + this.getValorEntrega();
+        System.out.println("O valor total da entrega foi de :" + aux);
+        return aux;
+    }
+
 }
