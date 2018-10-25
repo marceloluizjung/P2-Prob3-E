@@ -11,7 +11,7 @@ package problema3;
  */
 public class FactoryTipoEntrega {
     
-public Entrega FactoryTipoEntrega(int tipo, double peso) {
+public Entrega FactoryTipoEntrega(int tipo, double peso) throws TipoEntregaInvalido {
         switch (tipo) {
             case 1:
                 return new Pac(peso);
@@ -19,9 +19,8 @@ public Entrega FactoryTipoEntrega(int tipo, double peso) {
                 return new Sedex(peso);
             case 3:
                 return new RetiraLocal();
-            default:
-                System.out.println("Escolha um tipo de entrega disponível... 1,2,3");
+            default:            
+                throw new TipoEntregaInvalido("Escolha um tipo de entrega disponível: 1,2,3");
         }
-        return null;
     }
 }

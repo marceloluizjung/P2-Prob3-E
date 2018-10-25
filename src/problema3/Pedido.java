@@ -9,7 +9,7 @@ public class Pedido {
     private String nomeCliente;
     private Date data;
     private String endereco;
-    private ArrayList<ItemPedido> itens;
+    private ArrayList<ItemPedido> itens = new ArrayList<>();
     private Entrega entrega;
     private double pesoTotal;
     FactoryTipoEntrega fac;
@@ -70,19 +70,17 @@ public class Pedido {
         return valorPeso;
     }
 
-    protected Entrega escolhaTipoEntrega(int tipo) {
-        System.out.println("Escolha o tipo de entrega 1, 2, 3");
+    public Entrega escolhaTipoEntrega(int tipo) throws TipoEntregaInvalido {
         entrega = fac.FactoryTipoEntrega(tipo, this.pesoTotal);
         return entrega;
     }
     
-    protected double getValorEntrega(){
+    public double getValorEntrega(){
         return entrega.retornarValorEntrega();
     }
 
-    protected double getValorTotal() {
+    public double getValorTotal() {
         double aux = this.getValorPedido() + this.getValorEntrega();
-        System.out.println("O valor total da entrega foi de :" + aux);
         return aux;
     }
 
