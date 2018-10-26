@@ -12,10 +12,9 @@ public class Pedido {
     private ArrayList<ItemPedido> itens = new ArrayList<>();
     private Entrega entrega;
     private double pesoTotal;
-    FactoryTipoEntrega fac;
+    private TipoEntregaStrategy fac = TipoEntregaStrategy.getSingleton();;
 
     public Pedido() {
-        fac = new FactoryTipoEntrega();
     }
 
     public int getNumero() {
@@ -71,11 +70,12 @@ public class Pedido {
     }
 
     public Entrega escolhaTipoEntrega(int tipo) throws TipoEntregaInvalido {
-        entrega = fac.FactoryTipoEntrega(tipo, this.pesoTotal);
+
+        entrega = fac.getTipoEntrega(tipo, this.pesoTotal);
         return entrega;
     }
-    
-    public double getValorEntrega(){
+
+    public double getValorEntrega() {
         return entrega.retornarValorEntrega();
     }
 
@@ -84,4 +84,8 @@ public class Pedido {
         return aux;
     }
 
+    public TipoEntregaStrategy testeSingleton(){
+        return fac;
+    }
+    
 }
