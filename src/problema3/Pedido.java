@@ -12,7 +12,9 @@ public class Pedido {
     private ArrayList<ItemPedido> itens = new ArrayList<>();
     private Entrega entrega;
     private double pesoTotal;
-    private TipoEntregaStrategy fac = TipoEntregaStrategy.getSingleton();;
+    private TipoEntregaStrategy fac = TipoEntregaStrategy.getSingleton();
+
+    ;
 
     public Pedido() {
     }
@@ -70,7 +72,6 @@ public class Pedido {
     }
 
     public Entrega escolhaTipoEntrega(int tipo) throws TipoEntregaInvalido {
-
         entrega = fac.getTipoEntrega(tipo, this.pesoTotal);
         return entrega;
     }
@@ -80,12 +81,14 @@ public class Pedido {
     }
 
     public double getValorTotal() {
-        double aux = this.getValorPedido() + this.getValorEntrega();
-        return aux;
+        return this.getValorPedido() + this.getValorEntrega();
     }
 
-    public TipoEntregaStrategy testeSingleton(){
+    public TipoEntregaStrategy testeSingleton() {
         return fac;
     }
-    
+
+    public int getQtdItemPedido() {
+        return itens.size();
+    }
 }
