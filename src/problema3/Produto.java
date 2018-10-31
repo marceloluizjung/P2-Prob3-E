@@ -4,7 +4,7 @@ public class Produto {
 
     private String descricao;
     private double valor;
-    private int peso;
+    private double peso;
 
     /**
      * @param descricao
@@ -12,9 +12,9 @@ public class Produto {
      * @param peso
      */
     public Produto(String descricao, double valor, int peso) {
-        setDescricao(descricao);
-        setValor(valor);
-        setPeso(peso);
+        this.setDescricao(descricao);
+        this.setValor(valor);
+        this.setPeso(peso);
     }
 
     public String getDescricao() {
@@ -33,15 +33,15 @@ public class Produto {
         this.valor = valor;
     }
 
-    public int getPeso() {
-        return (peso/1000);
+    public double getPeso() {
+        return peso;
     }
 
-    public void setPeso(int peso) {
+    public void setPeso(double peso) {
         if (peso <= 0) {
             throw new IllegalArgumentException("Peso do produto deve ser acima de ZERO");
         } else {
-            this.peso = peso;
+            this.peso = (peso/1000);
         }
     }
 }

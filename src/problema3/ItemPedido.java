@@ -12,8 +12,8 @@ class ItemPedido {
      * @param quantidade
      */
     protected ItemPedido(Produto produto, int quantidade) {
-        setProduto(produto);
-        setQuantidade(quantidade);
+        this.setProduto(produto);
+        this.setQuantidade(quantidade);
     }
 
     protected Produto getProduto() {
@@ -45,7 +45,7 @@ class ItemPedido {
     }
     
     protected double getPesoTotalItem(){
-        return (this.quantidade * produto.getPeso());
+        return (this.quantidade * this.produto.getPeso());
     }
    
         

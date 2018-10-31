@@ -15,7 +15,9 @@ public class TipoEntregaStrategy {
             return new Sedex(peso);
         } else if (tipo == 3) {
             return new RetiraLocal();
-        } else {
+        } else if (tipo == 4) {
+            return new Motoboy(peso);
+        } else{
             throw new TipoEntregaInvalido("Escolha um tipo de entrega disponível: 1,2,3");
         }
 

@@ -1,0 +1,11 @@
+Padrões de Projeto
+Atividade 03 - Sistema de Vendas
+
+Padrões Utilizados:
+
+Strategy:
+	- Estratégia: Entrega;
+	- Estratégias concretas: Motoboy, RetirarNoLocal, Sedex e Pac;
+	- Contexto: TipoEntregaStrategy.
+Singleton: 
+ 	- Strategy: TipoEntregaStrategy.

@@ -16,10 +16,9 @@ public class Pac implements Entrega {
 
     @Override
     public double retornarValorEntrega() {
-
         if (this.peso > 0 && this.peso <= 1) {
             return precoAte1;
-        } else if (this.peso <= 2 && this.peso >= 1) {
+        } else if (this.peso > 1 && this.peso <= 2) {
             return precoAte2;
         } else if (this.peso > 2 && this.peso <= 3) {
             return precoAte3;

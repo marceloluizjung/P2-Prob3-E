@@ -4,17 +4,14 @@ public class TesteMain {
 
     public static void main(String[] args) {
         //Tipo entrega
-        final int tipoEntrega = 1;
+        final int tipoEntrega = 2;
 
         //Criando pedido
         Pedido pedido1 = new Pedido();
         Pedido pedido2 = new Pedido();
 
         //Criando produto
-        Produto produto1 = new Produto("Café Promoção", 2.0, 2);
-
-        //Item Pedido 
-        ItemPedido itemPedido1 = new ItemPedido(produto1, 1);
+        Produto produto1 = new Produto("Café Promoção", 1.0, 1);
 
         //Add item ao pedido 
         pedido1.incluirItem(produto1, 1);

@@ -6,13 +6,16 @@ public class Motoboy implements Entrega {
     private final double valorEntrega = 7;
     private final double limitePeso = 25;
     private final double limiteProduto = 30;
-    Pedido pedido;
+    private Pedido pedido;
 
-    public Motoboy(double peso, Pedido pedidoAtual) {
+    public Motoboy(double peso) {
         this.peso = peso;
-        this.pedido = pedidoAtual;
     }
 
+    public void setPedido(Pedido pedido){ 
+        this.pedido = pedido; 
+    }
+    
     @Override
     public double retornarValorEntrega() {
 

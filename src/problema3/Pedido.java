@@ -14,7 +14,7 @@ public class Pedido {
     private double pesoTotal;
     private TipoEntregaStrategy fac = TipoEntregaStrategy.getSingleton();
 
-    ;
+   
 
     public Pedido() {
     }
@@ -72,7 +72,7 @@ public class Pedido {
     }
 
     public Entrega escolhaTipoEntrega(int tipo) throws TipoEntregaInvalido {
-        entrega = fac.getTipoEntrega(tipo, this.pesoTotal);
+        entrega = fac.getTipoEntrega(tipo, this.getPesoTotalPedido());
         return entrega;
     }
 
