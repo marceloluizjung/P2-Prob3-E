@@ -1,11 +1,36 @@
-Padr�es de Projeto
+Padrões de Projeto
 Atividade 03 - Sistema de Vendas
 
-Padr�es Utilizados:
+Padrões Utilizados:
 
 Strategy:
-	- Estrat�gia: Entrega;
-	- Estrat�gias concretas: Motoboy, RetirarNoLocal, Sedex e Pac;
+	- Estratégia: Entrega;
+	- Estratégias concretas: Motoboy, RetirarNoLocal, Sedex e Pac;
 	- Contexto: TipoEntregaStrategy.
 Singleton: 
  	- Strategy: TipoEntregaStrategy.
+	
++-*+-*+-*+-*+-*+-*+-*+-*
+Observações do Professor:
+No mapeamento:
+- Contexto: TipoEntregaStrategy. O contexto correto é a classe Pedido!
+- Singleton: são as estratégias concretas
+
+Na implementação:
+- na classe principal não variou a entrega para o mesmo pedido: "Crie uma classe contendo o método main para demonstrar a instanciação do pedido, inclusão de itens e a chamada ao método para cálculo da entrega do pedido (getValorEntrega). Mantendo a mesma instância de pedido, modifique o tipo de entrega e demonstre a aplicação correta do valor para a entrega utilizada. Inclua uma situação em que a exceção deve ser lançada"
+- na classe principal não faz nenhum sentido aquele teste de Singleton
+
+- na classe Pedido não deveria ter dois atributos para a entrega, nem atributo de peso (pois deve ser calculado sobre os itens de pedido):
+public class Pedido {
+    private Entrega entrega;
+    private double pesoTotal;
+    private TipoEntregaStrategy fac = TipoEntregaStrategy.getSingleton();
+    
+- a classe TipoEntregaStrategy não faz sentido para implementar Singleton. O padrão precisa ser implementado diretamente sobre a classe que irá aplicá-lo, senão a classe poderá ter vários objetos instanciados. No caso, precisava ser implementado em Pac, Motoboy, Sedex e RetirarNoLocal.
+
+- a interface Entrega, em seu método retornarValorEntrega deveria receber um objeto de Pedido. Assim, cada tipo de entrega poderia perguntar o que precisasse para seu cálculo:
+public interface Entrega {
+	double retornarValorEntrega();
+}
+
+Nota (0-3):2,0
